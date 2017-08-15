@@ -688,6 +688,7 @@
 		container         = $(self.opts(OPT_HTML_WRAP));
 		hiddenInput       = $(self.opts(OPT_HTML_HIDDEN));
 
+		self.originalWidth = input.outerWidth();
 		input
 			.wrap(container)
 			.keydown(function(e) { return self.onKeyDown(e) })
@@ -712,8 +713,6 @@
 		$.extend(true, itemManager, self.opts(OPT_EXT + '.item.manager'));
 		$.extend(true, self, self.opts(OPT_EXT + '.*'), self.opts(OPT_EXT + '.core'));
 		
-		self.originalWidth = input.outerWidth();
-
 		self.invalidateBounds();
 
 		itemManager.init(self);
